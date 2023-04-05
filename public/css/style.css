@@ -59,6 +59,11 @@ form {
 img {
   height: 20em;
 }
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
