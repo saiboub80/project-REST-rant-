@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { Router } = require('express')
 const db = require('../models')
 
 router.get('/', (req, res) => {
@@ -15,24 +16,24 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   db.Place.create(req.body)
-  .then(() => {
-      res.redirect('/places')
-  })
-  .catch(err => {
-    if (err && err.name == 'ValidationError') {
-      let message = 'Validation Error: '
+    .then(() => {
+      res.redirect('/places');
+    })
+    .catch((err) => {
       if (err && err.name == 'ValidationError') {
-        let message = 'Validation Error: '
+        let message = 'Validation Error: ';
         for (var field in err.errors) {
-            message += `${field} was ${err.errors[field].value}. `
-            message += `${err.errors[field].message}`
+          message += `${field} was ${err.errors[field].value}. `;
+          message += `${err.errors[field].message}`;
         }
-        console.log('Validation error message', message)
-        res.render('places/new', { message })
-    }
-    else {
-        res.render('error404')
-    }
+        console.log('Validation error message', message);
+        res.render('places/new', { message });
+      } else {
+        res.render('error404');
+      }
+    });
+});
+
       
     
 router.get('/new', (_req, res) => {
@@ -41,7 +42,9 @@ router.get('/new', (_req, res) => {
 
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
+  .populate('comments')
   .then(place => {
+      console.log(place.comments)
       res.render('places/show', { place })
   })
   .catch(err => {
@@ -49,6 +52,7 @@ router.get('/:id', (req, res) => {
       res.render('error404')
   })
 })
+
 
 
 router.get('/:id/edit', (req, res) => {
@@ -82,7 +86,4 @@ router.delete('/:id', (req, res) => {
           res.render('error404')
       })
 })
-
-
-
 module.exports = router
