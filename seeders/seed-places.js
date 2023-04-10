@@ -1,10 +1,11 @@
 const db = require('../models')
+
 db.Place.create([{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
-    pic: '/images/paul-rogers.jpg',
+    pic: '/images/h-thai-ml-tables.jpg',
     founded: 1989
 }, {
     name: 'Coding Cat Cafe',
@@ -22,4 +23,3 @@ db.Place.create([{
     console.log('Failure!', err)
     process.exit()
 })
-
