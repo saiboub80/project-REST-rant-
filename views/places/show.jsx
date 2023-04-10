@@ -1,6 +1,3 @@
-
- 
-
 const React = require('react')
 const Def = require('../default')
 
@@ -105,9 +102,9 @@ function show (data) {
                   <label htmlFor="stars">Star Rating</label>
                   <input type="range" step="0.5" min="1" max="5" id="stars" name="stars" className="form-control" />
                 </div>
-                <div className="form-check col-sm-2">
-                  <label htmlFor="flexCheckChecked">Rant?</label>
-                  <input type="checkbox" id="rant" name="rant" class="form-check-input" checked />
+                <div className="form-group col-sm-2">
+                  <label htmlFor="rant">Rant?</label>
+                  <input type="checkbox" id="rant" name="rant" className="form-control" />
                 </div>
               </div>
               <input type="submit" className="btn btn-primary" value="Add Comment" />
