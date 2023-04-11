@@ -8,10 +8,9 @@ function home () {
                 <h1>REST-Rant</h1>
                 <div>
                     <img src="./images/h-thai-ml-tables.png" alt="thai-ml-tables" />
-                    <div>
-                        Photo by <a href="AUTHOR_LINK">Brenda Godinez</a> on <a href="UNSPLASH_LINK">Unsplash</a>
-                    </div>
+                   
                 </div>
+                <br />
                 <a href="/places">
                     <button className="btn-primary">Places Page</button>
                 </a>

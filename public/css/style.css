@@ -5,11 +5,11 @@ body {
 
 h1 {
   text-align: center;
-  color: cornflowerblue;
+  color: rgb(237, 142, 242);
 }
 
 h2 {
-  color: lightblue;
+  color: rgb(210, 238, 151);
 }
 
 main {
@@ -20,7 +20,7 @@ main {
 }
 
 nav {
-  background-color: cornflowerblue;
+  background-color: rgb(237, 173, 100);
   padding: 10px;
 }
 
@@ -64,7 +64,9 @@ img {
   justify-content: center;
   align-items: center;
 }
-
+body{
+  list-style-type: none;
+}
 
 
   
